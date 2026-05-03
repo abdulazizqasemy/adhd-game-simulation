@@ -43,27 +43,27 @@
 }
 
 :root {
-  --primary: var(--color-blue-700);
-  --primary-foreground: var(--color-blue-50);
-  --sidebar-primary: var(--color-blue-600);
-  --sidebar-primary-foreground: var(--color-blue-50);
-  --chart-1: var(--color-blue-300);
-  --chart-2: var(--color-blue-500);
-  --chart-3: var(--color-blue-600);
-  --chart-4: var(--color-blue-700);
-  --chart-5: var(--color-blue-800);
+  --primary: oklch(0.65 0.2 20);  /* Coral Red */
+  --primary-foreground: oklch(0.98 0.01 0);
+  --sidebar-primary: oklch(0.6 0.2 20);
+  --sidebar-primary-foreground: oklch(0.98 0.01 0);
+  --chart-1: oklch(0.7 0.15 20);
+  --chart-2: oklch(0.65 0.2 20);
+  --chart-3: oklch(0.6 0.22 20);
+  --chart-4: oklch(0.55 0.24 20);
+  --chart-5: oklch(0.5 0.25 20);
   --radius: 0.65rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.235 0.015 65);
+  --background: oklch(0.98 0.005 0);  /* Soft Light Gray */
+  --foreground: oklch(0.2 0.02 65);  /* Dark Slate */
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.235 0.015 65);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.235 0.015 65);
-  --secondary: oklch(0.98 0.001 286.375);
-  --secondary-foreground: oklch(0.4 0.015 65);
+  --secondary: oklch(0.95 0.01 200);  /* Light Teal */
+  --secondary-foreground: oklch(0.25 0.02 65);
   --muted: oklch(0.967 0.001 286.375);
   --muted-foreground: oklch(0.552 0.016 285.938);
-  --accent: oklch(0.967 0.001 286.375);
+  --accent: oklch(0.65 0.2 180);  /* Teal */  
   --accent-foreground: oklch(0.141 0.005 285.823);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.985 0 0);
@@ -117,8 +117,17 @@
   * {
     @apply border-border outline-ring/50;
   }
+  html {
+    --font-display: 'Fredoka One', sans-serif;
+    --font-body: 'Poppins', sans-serif;
+  }
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    font-weight: 700;
   }
   button:not(:disabled),
   [role="button"]:not([aria-disabled="true"]),
@@ -131,6 +140,7 @@
   input[type="radio"]:not(:disabled) {
     @apply cursor-pointer;
   }
+
 }
 
 @layer components {
